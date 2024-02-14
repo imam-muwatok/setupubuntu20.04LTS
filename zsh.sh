@@ -150,30 +150,6 @@ scrcpy -s serial1
 - examle serial is M95HACPQFNP5X
 scrcpy -s M95HACPQFNP5X
 
-
-
-===================================================================
-NODE JS
-===================================================================
-
-# install node js stable version
-
-sudo apt install nodejs
-
-
-# upgrade node js
-
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-sudo n latest
-
-sudo apt-get install --reinstall nodejs-legacy     # fix /usr/bin/node
-
-
-sudo n rm 6.0.0     # replace number with version of Node that was installed
-  sudo npm uninstall -g n
-
 ===================================================================
 # REMOVE SWAP MEMORY
 ===================================================================
