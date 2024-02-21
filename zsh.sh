@@ -233,4 +233,16 @@ sudo nano ~/.zshrc
 #add this 
 source ~/.nvm/nvm.sh
 
+===================================================================
+Pantheon-Tweaks
+===================================================================
+
+
+sudo apt install software-properties-common
+sudo add-apt-repository -y ppa:philip.scott/pantheon-tweaks
+
+sudo apt update
+
+sudo apt install -y pantheon-tweaks
+
 
