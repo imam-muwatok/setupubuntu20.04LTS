@@ -209,7 +209,10 @@ sudo apt-get remove --autoremove obs-studio
 NodeJs NVM
 ===================================================================
 
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 #bash
 source ~/.bashrc
@@ -221,7 +224,9 @@ source ~/.nvm/nvm.sh
 
 nvm list-remote
 
-nvm install v20.11.0
+nvm install v20.11.1
+
+nvm use v20.11.1
 
 sudo nano ~/.zshrc
 
