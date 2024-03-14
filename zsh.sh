@@ -245,4 +245,22 @@ sudo apt update
 
 sudo apt install -y pantheon-tweaks
 
+===================================================================
+TLP
+===================================================================
+
+
+sudo apt install tlp
+sudo apt install tlp-rdw
+
+ sudo tlp start
+ #status
+ sudo tlp-stat -s
+
+ #config
+ sudo tlp-stat -c
+
+ #batteray detail
+ sudo tlp-stat -b
+
 
