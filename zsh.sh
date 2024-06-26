@@ -271,4 +271,6 @@ Elementary app remove
 
 
  sudo apt remove pantheon-mail
+ sudo apt remove pantheon-videos
+ 
 
