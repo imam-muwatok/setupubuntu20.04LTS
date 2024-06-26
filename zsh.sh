@@ -264,3 +264,11 @@ sudo apt install tlp-rdw
  sudo tlp-stat -b
 
 
+===================================================================
+Elementary app remove
+===================================================================
+
+
+
+ sudo apt remove pantheon-mail
+
