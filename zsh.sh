@@ -271,6 +271,11 @@ Elementary app remove
 
 
  sudo apt remove pantheon-mail
- sudo apt remove pantheon-videos
+ sudo apt remove pantheon.videos
+ sudo apt remove pantheon.feedback
+ sudo apt remove pantheon.tasks
+
+ if not work change "pantheon." to "pantheon-"
+ 
  
 
