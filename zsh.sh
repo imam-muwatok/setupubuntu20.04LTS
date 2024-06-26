@@ -276,6 +276,11 @@ Elementary app remove
  sudo apt remove pantheon.tasks
 
  if not work change "pantheon." to "pantheon-"
+
+ sudo apt install software-properties-common
+ sudo add-apt-repository ppa:philip.scott/pantheon-tweaks
+ sudo apt-get update
+ sudo apt-get install pantheon-tweaks
  
  
 
