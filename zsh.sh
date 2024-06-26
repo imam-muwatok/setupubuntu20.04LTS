@@ -282,5 +282,6 @@ Elementary app remove
  sudo apt-get update
  sudo apt-get install pantheon-tweaks
  
- 
+ #Cek Shell
+ echo $SHELL
 
