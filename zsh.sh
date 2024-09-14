@@ -238,10 +238,10 @@ Pantheon-Tweaks
 ===================================================================
 
 
-sudo apt install software-properties-common
+sudo apt install software-properties-common -y
 sudo add-apt-repository -y ppa:philip.scott/pantheon-tweaks
 
-sudo apt update
+sudo apt update -y
 
 sudo apt install -y pantheon-tweaks
 
@@ -250,8 +250,8 @@ TLP
 ===================================================================
 
 
-sudo apt install tlp
-sudo apt install tlp-rdw
+sudo apt install tlp -y
+sudo apt install tlp-rdw -y
 
  sudo tlp start
  #status
