@@ -285,3 +285,18 @@ Elementary app remove
  #Cek Shell
  echo $SHELL
 
+===================================================================
+Sensors
+===================================================================
+
+sudo apt-get install lm-sensors
+
+sudo sensors-detect 
+# YES for all
+
+# static
+sensors
+
+# realtime
+watch -n 2 sensors
+
