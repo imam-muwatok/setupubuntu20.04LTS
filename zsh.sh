@@ -279,6 +279,7 @@ Elementary app remove
 
  sudo apt install software-properties-common
  sudo add-apt-repository ppa:philip.scott/pantheon-tweaks
+ sudo add-apt-repository --remove ppa:philip.scott/pantheon-tweaks
  sudo apt-get update
  sudo apt-get install pantheon-tweaks
  
