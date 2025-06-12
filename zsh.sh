@@ -286,7 +286,7 @@ Elementary app remove
  #Cek Shell
  echo $SHELL
 
- ===================================================================
+===================================================================
 Bluetooth
 ===================================================================
 
@@ -295,6 +295,23 @@ sudo systemctl enable disable-bluetooth-on-boot.service
 sudo systemctl start disable-bluetooth-on-boot.service
 sudo systemctl stop disable-bluetooth-on-boot.service
 sudo systemctl status disable-bluetooth-on-boot.service
+
+===================================================================
+wingpanel-indicator-sysmon
+===================================================================
+# source
+https://github.com/casasfernando/wingpanel-indicator-sysmon
+sudo apt install gettext libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-dev libhandy-1-dev meson valac
+
+git clone https://github.com/casasfernando/wingpanel-indicator-sysmon.git
+cd wingpanel-indicator-sysmon
+mkdir build
+cd build
+meson setup --prefix=/usr
+ninja
+sudo ninja install
+
+
 
 ===================================================================
 Sensors
