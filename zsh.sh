@@ -286,6 +286,16 @@ Elementary app remove
  #Cek Shell
  echo $SHELL
 
+ ===================================================================
+Bluetooth
+===================================================================
+
+sudo nano /etc/systemd/system/disable-bluetooth-on-boot.service
+sudo systemctl enable disable-bluetooth-on-boot.service
+sudo systemctl start disable-bluetooth-on-boot.service
+sudo systemctl stop disable-bluetooth-on-boot.service
+sudo systemctl status disable-bluetooth-on-boot.service
+
 ===================================================================
 Sensors
 ===================================================================
