@@ -209,30 +209,37 @@ sudo apt-get remove --autoremove obs-studio
 NodeJs NVM
 ===================================================================
 
+# for bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+# for zsh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+# add path
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-#bash
+#add this to ~/.bashrc or ~/.zshrc
+source ~/.nvm/nvm.sh
+
+#zsh
 source ~/.bashrc
 
 #zsh
 source ~/.zshrc
 
-source ~/.nvm/nvm.sh
+# install node latest
+nvm install latest
 
+# check list
 nvm list-remote
 
-nvm install v20.11.1
+# v22.16.0   (Latest LTS: Jod)
+# install version
+nvm install v22.16.0
 
-nvm use v20.11.1
-
-sudo nano ~/.zshrc
-
-#add this 
-source ~/.nvm/nvm.sh
-
+# chage version
+nvm use 14.17.1
 ===================================================================
 Pantheon-Tweaks
 ===================================================================
