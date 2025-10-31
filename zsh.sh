@@ -253,7 +253,7 @@ sudo apt update -y
 sudo apt install -y pantheon-tweaks
 
 ===================================================================
-TLP
+TLP ✅
 ===================================================================
 
 
@@ -304,7 +304,7 @@ sudo systemctl stop disable-bluetooth-on-boot.service
 sudo systemctl status disable-bluetooth-on-boot.service
 
 ===================================================================
-wingpanel-indicator-sysmon
+wingpanel-indicator-sysmon ✅
 ===================================================================
 # source
 https://github.com/casasfernando/wingpanel-indicator-sysmon
