@@ -241,16 +241,12 @@ nvm install v22.16.0
 # chage version
 nvm use 14.17.1
 ===================================================================
-Pantheon-Tweaks
+Pantheon-Tweaks EOS 8
 ===================================================================
 
 
 sudo apt install software-properties-common -y
-sudo add-apt-repository -y ppa:philip.scott/pantheon-tweaks
-
-sudo apt update -y
-
-sudo apt install -y pantheon-tweaks
+flatpak install flathub io.github.pantheon_tweaks.pantheon-tweaks
 
 ===================================================================
 TLP ✅
