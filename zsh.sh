@@ -331,3 +331,15 @@ sensors
 # realtime
 watch -n 2 sensors
 
+===================================================================
+Cek flac
+===================================================================
+
+sudo apt update
+sudo apt install sox libsox-fmt-all
+
+# without file txt
+find . -name "*.flac" -exec sh -c 'echo -n "{}: "; sox "{}" -n stats 2>&1 | grep "Bit-depth" || echo "N/A"' \;
+
+# with file txt
+find . -name "*.flac" -exec sh -c 'echo -n "{}: "; sox "{}" -n stats 2>&1 | grep "Bit-depth" || echo "N/A"' \; > laporan_keaslian_audio.txt
