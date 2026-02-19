@@ -343,3 +343,35 @@ find . -name "*.flac" -exec sh -c 'echo -n "{}: "; sox "{}" -n stats 2>&1 | grep
 
 # with file txt
 find . -name "*.flac" -exec sh -c 'echo -n "{}: "; sox "{}" -n stats 2>&1 | grep "Bit-depth" || echo "N/A"' \; > laporan_keaslian_audio.txt
+
+find . -name "*.flac" -exec sh -c '
+    file="{}"
+    # 1. Ambil data asli dari SoX (Actual)
+    actual=$(sox "$file" -n stats 2>&1 | grep -E "Precision|Bit-depth" | awk "{print \$NF}")
+    
+    # 2. Ambil klaim metadata dari FFprobe (Klaim)
+    metadata=$(ffprobe -v error -show_entries stream=bits_per_raw_sample -of default=noprint_wrappers=1:nokey=1 "$file" | head -n 1)
+    
+    # Fallback jika metadata tidak terbaca angka bits-nya
+    if [ -z "$metadata" ] || [ "$metadata" = "N/A" ] || [ "$metadata" = "0" ]; then
+        fmt=$(ffprobe -v error -show_entries stream=sample_fmt -of default=noprint_wrappers=1:nokey=1 "$file")
+        case "$fmt" in
+            s32*) metadata=32 ;;
+            s16*) metadata=16 ;;
+            *) metadata=24 ;;
+        esac
+    fi
+
+    # 3. Bandingkan dan beri vonis
+    if [ -z "$actual" ]; then
+        status="[ERROR/SKIP]"
+    elif [ "$metadata" -gt "$actual" ]; then
+        status="[PALSU/UPSAMPLED] -> Klaim: ${metadata}-bit | Isi Asli: ${actual}-bit"
+    elif [ "$actual" -lt 16 ]; then
+        status="[PALSU/TRANSCODED] -> Klaim: ${metadata}-bit | Isi Asli: ${actual}-bit (Bekas MP3)"
+    else
+        status="[ASLI] -> Klaim: ${metadata}-bit | Isi Asli: ${actual}-bit"
+    fi
+
+    echo "$file: $status"
+' \; > laporan_keaslian_lengkap.txt
