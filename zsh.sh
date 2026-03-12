@@ -375,3 +375,16 @@ find . -name "*.flac" -exec sh -c '
 
     echo "$file: $status"
 ' \; > laporan_keaslian_lengkap.txt
+
+
+# with base on bit txt
+find . -name "*.flac" -exec sh -c '
+    bitdepth=$(sox "{}" -n stats 2>&1 | grep "Bit-depth" | awk "{print \$2}")
+    if [ "$bitdepth" = "16/16" ]; then
+        echo "{}" >> list-16bit.txt
+    elif [ "$bitdepth" = "24/24" ]; then
+        echo "{}" >> list-24bit.txt
+    else
+        echo "{}: ${bitdepth:-N/A}" >> list-unknown.txt
+    fi
+' \;
